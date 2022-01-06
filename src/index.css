@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.comp2{
+  top: 15px;
+    position: relative;
+}
+
+.comp3{
+  position: fixed;
+top: 75px;
+right: 435px;
+}
+.comp5{
+  position: fixed;
+ right: 33px;
+  bottom: 12px;
+}
+.comp6{
+  position: fixed;
+  left: 15px;
+  top: 75px;
+}

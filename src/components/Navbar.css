@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&family=Pacifico&family=Poppins:wght@200&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans:ital@0;1&family=Pacifico&family=Poppins:wght@200&family=Raleway&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #efefef;
+    transition: 0.5s;
+}
+#rnxg-logo{
+    width: 55px;
+    filter: invert(1);
+    padding-top: 5px;
+}
+/* togggle */
+.toggle{
+    
+    position: relative;
+    width: 54px;
+    height: 26px;
+    left: -10px;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+cursor: pointer;
+flex: 1;
+}
+
+.notification{
+    padding: 0px 5px 0px 5px;
+    cursor: pointer;
+}
+.search-logo{
+    position: relative;
+    padding-top: 5px;
+    left: -63%;
+    cursor: pointer;
+    z-index: 1;
+}
+.bar1,.bar3{
+    margin: auto;
+    position: relative;
+    width:30px;
+    height: 4px;
+    background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+    animation: gradient 5s ease infinite;
+    background-size: 400% 400%;
+    border-radius: 10px;
+    transition: 0.5s;
+   
+}
+
+.bar2{
+    margin: auto;
+    position: relative;
+    width:30px;
+    height: 4px;
+    background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+    animation: gradient 5s ease infinite;
+    background-size: 400% 400%;
+    border-radius: 10px;
+    
+}
+
+
+
+/* toggle ends */
+.nav{
+    position: fixed;
+    width: 100%;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+}
+.create-post{
+ 
+    cursor: pointer;
+   
+
+    
+}
+.container{
+    position: relative;
+    width: 93.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search{
+    width: 74%;
+    display: flex;
+    height: 54px;
+  justify-content: center;
+  align-items: center;
+  flex: 6;
+}
+.search input{
+    border-radius: 15px;
+    border: none;
+    /* border: 1.5px solid rgb(167, 167, 167); */
+  width: 40%;
+
+    height: 30px;
+    padding-left: 65px;
+    background-color: #F0F2F5;
+    position: fixed;
+    right: 27%;
+}.search input:focus{
+outline: none;
+}
+.items{
+    height: 54px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+.items button{
+    border-radius: 100%;
+  border: none;
+    width: 35px;
+    height:35px;
+    /* background-color: #4158D0; */
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+   color: #ffffff;
+   cursor: pointer;
+   font-family: 'Noto Sans', sans-serif;
+   
+
+}
+.items button:hover{
+    background-image:  linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+
+}
+.logonexus{
+    flex: 3;
+   
+    
+    
+}.logonexus a{
+    font-size: 22px;
+font-family: poppins;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+}
+.aside{
+    top: 53px;
+    position: fixed;
+    height: 100vh;
+    width: 300px;
+    display: flex;
+ background-color: #ffffff;
+    z-index: 10;
+   transition: 0.5s ;
+    left:-300px;
+}
+
+.wrapper{
+  display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 416px;
+   
+    
+}
+.wrapper ul {
+
+    display: flex;
+ flex-direction: column;
+ justify-content: space-evenly;
+    
+}
+
+.wrapper ul li{
+
+
+    
+    list-style: none;
+}
+.wrapper ul li a:hover{
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+color: #ffffff;
+transition:  ease-in;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.wrapper ul li a{
+   display: flex;
+   align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+     color: black;
+    
+    align-items: center;
+    
+   width: 185px;
+    padding: 18px 25px;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  
+}
+
+
