@@ -24,7 +24,7 @@ fetchPosts()
 <div className="scroll">
 
     {posts.map((p)=>(
-         <Card key={p.id} post={p}/>
+         <Card key={p._id} post={p}/>
      ))}
 
 </div>

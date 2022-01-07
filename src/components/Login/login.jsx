@@ -1,6 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './login.css';
+import { useRef } from 'react';
+import { loginCall } from '../../apiCalls';
+import { AuthContext } from '../../context/AuthContext';
+
+
+
 export default function Login() {
+ const email = useRef();
+ const password = useRef();
+const {user ,isFetching, error, dispatch} = useContext(AuthContext)
+
+
+ const handleClick = (e)=>{
+    e.preventDefault()
+   loginCall({email:email.current.value,password:password.current.value}, dispatch)
+ };
+ console.log(user)
     return (
        <div className="ultimate">
         <div className="wrapper-100">
@@ -16,19 +32,21 @@ export default function Login() {
               <div className="slider-tab"></div>
            </div>
            <div className="form-inner">
-              <form action="#" className="login">
+              <form  className="login" onSubmit={handleClick}>
                  <div className="field">
-                    <input type="text" placeholder="Email Address" required/>
+                    <input type="text" placeholder="Email Address" minLength="6" required ref={email}/>
                  </div>
                  <div className="field">
-                    <input type="password" placeholder="Password" required/>
+                    <input type="password" placeholder="Password" required ref={password}/>
                  </div>
                  <div className="pass-link">
                     <a href="#">Forgot password?</a>
                  </div>
                  <div className="field btn">
                     <div className="btn-layer"></div>
-                    <input type="submit" value="Login"/>
+                    <button>
+                       {isFetching ? "•••":"Log In"}
+                       </button>
                  </div>
                  <div className="signup-link">
                     Not a member? <a href="">Signup now</a>
@@ -36,7 +54,7 @@ export default function Login() {
               </form>
               <form action="#" className="signup">
                  <div className="field">
-                    <input type="text" placeholder="Email Address" required />
+                    <input type="email" placeholder="Email Address" required />
                  </div>
                  <div className="field">
                     <input type="password" placeholder="Password" required />

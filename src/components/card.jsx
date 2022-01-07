@@ -3,7 +3,7 @@ import './style.css';
 // import { useState } from "react";
 import { useEffect,useState } from "react";
 import axios from "axios";
-
+import { format } from "timeago.js";
 
 
 
@@ -39,7 +39,7 @@ fetchUser()
 
             <p style={{position: 'relative', fontFamily: 'Segoe UI', fontSize: '15px', padding:'0 3px 0 12px'}}>
             {user.username}
-            </p>      <a style={{textDecoration:'none',fontSize: '13px',width:'50%'}} href="#">&#8226; Follow  </a> <p style={{fontSize:'13px'}}>{post.date}</p>     </div>
+            </p>      <a style={{textDecoration:'none',fontSize: '13px',width:'50%'}} href="#">&#8226; Follow  </a> <p style={{fontSize:'13px'}}>{format(post.createdAt)}</p>     </div>
             <div className="dots" style={{display:'flex', alignItems: 'center'}}>
             <svg aria-label="More options" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6.5" cy="12" r="1.5"></circle><circle cx="17.5" cy="12" r="1.5"></circle></svg>
             </div>
