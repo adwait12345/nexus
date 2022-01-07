@@ -44,7 +44,7 @@ const {user ,isFetching, error, dispatch} = useContext(AuthContext)
                  </div>
                  <div className="field btn">
                     <div className="btn-layer"></div>
-                    <button>
+                    <button type='submit' disabled={isFetching}>
                        {isFetching ? "•••":"Log In"}
                        </button>
                  </div>
