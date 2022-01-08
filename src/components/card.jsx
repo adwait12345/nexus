@@ -4,13 +4,18 @@ import './style.css';
 import { useEffect,useState } from "react";
 import axios from "axios";
 import { format } from "timeago.js";
-
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
 
 
 function Card({post}) {
     const [like,setLike] = useState(post.likes.length)
   const [isLiked,setIsLiked] = useState(false)
   const [user,setUser] = useState({})
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+ useEffect(() => {
+    setIsLiked(post.likes.includes(currentUser._id));
+  }, []); 
 
   useEffect(()=>{
     const fetchUser = async () =>{
@@ -19,12 +24,17 @@ const res = await axios.get(`users/${post.userId}`)
 }
 fetchUser()
 
-},[])
+},[]);
 
 
+
+const { user: currentUser } = useContext(AuthContext);
 
 
   const likeHandler =()=>{
+    try {
+        axios.put("/posts/" + post._id + "/like", { userId: currentUser._id });
+      } catch (err) {}
     setLike(isLiked ? like-1 : like+1)
     setIsLiked(!isLiked)
   }
@@ -35,7 +45,7 @@ fetchUser()
     <div className="top">
         <div className="left1">
             <div className="profile">
-            <img src={user.profilePicture ||" https://www.howtogeek.com/wp-content/uploads/2021/07/Discord-Logo-Lede.png?height=200p&trim=2,2,2,2"} alt=""/>
+            <img src={ user.profilePicture ? PF+user.profilePicture :" https://www.howtogeek.com/wp-content/uploads/2021/07/Discord-Logo-Lede.png?height=200p&trim=2,2,2,2"} alt=""/>
 
             <p style={{position: 'relative', fontFamily: 'Segoe UI', fontSize: '15px', padding:'0 3px 0 12px'}}>
             {user.username}
@@ -46,7 +56,7 @@ fetchUser()
         </div>
     </div>
     <div className="img">
-    <img onDoubleClick={likeHandler} style={{width: "99%",objectFit:"cover", height: "100%"}} id="photo" src={post.img} alt=""/>
+    <img onDoubleClick={likeHandler} style={{width: "99%",objectFit:"cover", height: "100%"}} id="photo" src={PF + post.img} alt=""/>
 
     </div>
     <div className="buttons">

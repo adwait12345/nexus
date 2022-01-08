@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import React from 'react';
+import Profile from './components/Profile/profile';
 import './App.css';
 import Home from './components/Home/home';
 import Login from './components/Login/login'
@@ -24,6 +25,8 @@ function App() {
         
       </Route>
       <Route exact path="/login" element={user ?<Navigate to="/home"/> :<Login/>}>
+      </Route>     
+       <Route exact path="/profile" element={<Profile/>}>
       </Route>
     </Routes>
   </BrowserRouter>

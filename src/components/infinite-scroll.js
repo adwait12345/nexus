@@ -3,20 +3,26 @@ import { useEffect, useState } from "react";
 import Card from "./card";
 import './style.css';
 import axios from "axios";
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
 // import { Posts } from "./Dummydata/dummydata";
 // import CreatePost from "../post/create-post";
 
  function Infinite() {
      const [posts,setPosts] = useState([]);
-
+     const {user} = useContext(AuthContext)
      useEffect(()=>{
          const fetchPosts = async () =>{
-    const res = await axios.get("posts/timeline/61d1f0aa6beae11482a7edc3")
-        setPosts(res.data) 
+    const res = await axios.get("posts/timeline/" + user._id)
+        setPosts(
+            res.data.sort((p1,p2)=>{
+                return new Date(p2.createdAt) - new Date(p1.createdAt);
+            })
+            ) 
 }
 fetchPosts()
    
-     },[])
+     },[user._id])
     return (
 <body>
 

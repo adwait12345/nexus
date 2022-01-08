@@ -3,11 +3,13 @@ import './login.css';
 import { useRef } from 'react';
 import { loginCall } from '../../apiCalls';
 import { AuthContext } from '../../context/AuthContext';
+import Signup from './signup';
 
 
 
 export default function Login() {
- const email = useRef();
+  
+   const email = useRef();
  const password = useRef();
 const {user ,isFetching, error, dispatch} = useContext(AuthContext)
 
@@ -52,21 +54,7 @@ const {user ,isFetching, error, dispatch} = useContext(AuthContext)
                     Not a member? <a href="">Signup now</a>
                  </div>
               </form>
-              <form action="#" className="signup">
-                 <div className="field">
-                    <input type="email" placeholder="Email Address" required />
-                 </div>
-                 <div className="field">
-                    <input type="password" placeholder="Password" required />
-                 </div>
-                 <div className="field">
-                    <input type="password" placeholder="Confirm password" required />
-                 </div>
-                 <div className="field btn">
-                    <div className="btn-layer"></div>
-                    <input type="submit" value="Signup"/>
-                 </div>
-              </form>
+             <Signup/>
            </div>
         </div>
      </div></div>
