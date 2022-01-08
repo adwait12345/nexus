@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import React from 'react';
-import Profile from './components/Profile/profile';
+import Profile from './components/Profile/Profile';
 import './App.css';
 import Home from './components/Home/home';
 import Login from './components/Login/login'
