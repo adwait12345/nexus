@@ -79,9 +79,11 @@ function Navbar() {
   let togglestatus = true;
 document.addEventListener("DOMContentLoaded", (event) => {
   console.log("hi");
- let po = document.querySelector(".toggle");
+  
+let po = document.querySelector(".toggle");
   po.addEventListener("click", () => {
  console.log('click')
+ 
  if (togglestatus === false) {
 
     document.querySelector(".aside").style.left = "-300px";

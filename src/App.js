@@ -21,12 +21,12 @@ function App() {
   return (
   <BrowserRouter>
     <Routes>
-      <Route exact path="/home" element={user ?<Home/> : <Login/>}>
+      <Route exact path="/home" element={user ?<Home/> : <Login/>}> </Route>
         
-      </Route>
+     
       <Route exact path="/login" element={user ?<Navigate to="/home"/> :<Login/>}>
       </Route>     
-       <Route exact path="/profile" element={<Profile/>}>
+       <Route exact path="/profile" element={ user?<Profile to="/profile"/>  :<Login/>}>
       </Route>
     </Routes>
   </BrowserRouter>
