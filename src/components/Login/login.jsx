@@ -17,7 +17,13 @@ const {user ,isFetching, error, dispatch} = useContext(AuthContext)
  const handleClick = (e)=>{
     e.preventDefault()
    loginCall({email:email.current.value,password:password.current.value}, dispatch)
- };
+   // set the state of the user
+   // setUser(response.data)
+   // store the user in localStorage
+   localStorage.setItem('user')
+   // console.log(response.data)
+
+};
  console.log(user)
     return (
        <div className="ultimate">

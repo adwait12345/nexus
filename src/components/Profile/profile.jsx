@@ -10,21 +10,24 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 //  import Infinite from '../infinite-scroll';
-
+import { useContext,useRef } from 'react';
+import { AuthContext } from "../../context/AuthContext";
 
 
 export default function Profile() {
 const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-const [user, setUser] = useState({});
-const username = useParams().username;
-
-useEffect(() => {
-  const fetchUser = async () => {
-    const res = await axios.get(`/users?username=${username}`);
-    setUser(res.data);
-  };
-  fetchUser();
-}, [username]);
+// const [user, setUser] = useState({});
+// const username = useParams().username;
+const { user } = useContext(AuthContext);
+const desc = useRef()
+console.log(desc)
+// useEffect(() => {
+//   const fetchUser = async () => {
+//     const res = await axios.get(`/users?username=${username}`);
+//     setUser(res.data);
+//   };
+//   fetchUser();
+// }, [username]);
 
     return (
         <div className='flex-container-profile'>
