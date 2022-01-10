@@ -1,10 +1,10 @@
 import React from 'react'
-
-export default function chat() {
+// import './chat.css';
+export default function Chat() {
     return (
 <div className="grid">
       {/* <!-- App background --> */}
-      <div className="top"></div>
+      <div className="top-chat"></div>
       <div className="bottom"></div>
       {/* <!-- App --> */}
       <div className="app">

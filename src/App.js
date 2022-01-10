@@ -12,6 +12,7 @@ import {
   Route,
   Navigate
 } from "react-router-dom";
+// import Chat from './components/chat/chat';
 
 
 
@@ -21,13 +22,16 @@ function App() {
   return (
   <BrowserRouter>
     <Routes>
-      <Route exact path="/home" element={user ?<Home/> : <Login/>}> </Route>
+      <Route exact path="/" element={user ?<Home/> : <Login/>}> </Route>
         
      
-      <Route exact path="/login" element={user ?<Navigate to="/home"/> :<Login/>}>
+      <Route exact path="/login" element={user ?<Navigate to="/"/> :<Login/>}>
       </Route>     
        <Route exact path="/profile" element={ user?<Profile to="/profile"/>  :<Login/>}>
       </Route>
+
+      {/* <Route exact path="/chat" element={ user?<Chat to="/chat"/>  :<Login/>}>
+      </Route> */}
     </Routes>
   </BrowserRouter>
   );

@@ -64,7 +64,7 @@
   * APP BACKGROUND *
   ******************/
   
-  .top {
+  .top-chat {
     background: var(--background-green);
     grid-column: 1 / -1;
     grid-row: 1 / 2;

@@ -4,7 +4,7 @@ import './style2.css';
 
 function WhatsHapp() {
     return (
-<body>
+
     <section className="vessel">
        <div className="content">
            <div className="h-2">
@@ -45,7 +45,7 @@ function WhatsHapp() {
            </div></div>
        </div>
     </section>
-</body>
+
     )}
 
 

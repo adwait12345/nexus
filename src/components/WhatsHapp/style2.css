@@ -3,7 +3,7 @@
     padding: 0;
 }
 .vessel{
-    position: absolute;
+    position: relative;
     display: flex;
    border-radius: 10px;
  background-color: #ffffff;
