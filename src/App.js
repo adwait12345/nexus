@@ -12,6 +12,7 @@ import {
   Route,
   Navigate
 } from "react-router-dom";
+import Signup from './components/Login/signup';
 // import Chat from './components/chat/chat';
 
 
@@ -22,11 +23,14 @@ function App() {
   return (
   <BrowserRouter>
     <Routes>
-      <Route exact path="/" element={user ?<Home/> : <Login/>}> </Route>
+      <Route exact path="/home" element={user ?<Home to="/home"/> : <Login/>}> </Route>
         
      
-      <Route exact path="/login" element={user ?<Navigate to="/"/> :<Login/>}>
-      </Route>     
+      <Route exact path="/login" element={user ?<Navigate to="/home"/> :<Login/>}>
+      </Route>    
+        <Route exact path="/signup" element={user ?<Navigate to="/home"/> :<Signup/>}>
+      </Route> 
+
        <Route exact path="/profile" element={ user?<Profile to="/profile"/>  :<Login/>}>
       </Route>
 
@@ -38,3 +42,16 @@ function App() {
 }
 
 export default App;
+
+// document.addEventListener('DOMContentLoaded', ()=>{
+
+// document.onreadystatechange = async function() {
+//   if (document.readyState !== "complete") {
+//       document.querySelector(".master").style.visibility = "hidden";
+//       document.querySelector(".bar").style.visibility = "visible";
+//   } else if(document.readyState == "complete") {
+//    document.querySelector(".bar").style.visibility = "hidden";
+//     document.querySelector(".master").style.visibility = "visible";
+  
+//   }
+// };})

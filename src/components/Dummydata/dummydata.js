@@ -10,7 +10,7 @@ export const Users = [
       username: "Janell Shrum",
     },
     {
-      id:3,
+      id:3, 
       profilePicture: "https://gravatar.com/avatar/1c19769d121fc9e533f53ef605eeb49d?s=400&d=robohash&r=x",
       username: "Alex Durden",
     },

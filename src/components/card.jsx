@@ -39,6 +39,27 @@ const { user: currentUser } = useContext(AuthContext);
     setIsLiked(!isLiked)
   }
     console.log(post)
+    //
+    let menustatus = true;
+    const Moremenu = ()=>{
+if(menustatus === false){
+  const element1=  document.getElementById(post.userId);
+   
+        element1.style.visibility = "hidden";
+
+  
+    menustatus = true;
+}else{
+ const element2=   document.getElementById(post.userId)
+    
+  
+        element2.style.visibility = "visible";
+
+   
+    menustatus = false;
+}
+    }
+    //
    return (
 <>
 <div className="container1">
@@ -50,9 +71,15 @@ const { user: currentUser } = useContext(AuthContext);
             <p style={{position: 'relative', fontFamily: 'Segoe UI', fontSize: '15px', padding:'0 3px 0 12px'}}>
             {user.username}
             </p>      <a style={{textDecoration:'none',fontSize: '13px',width:'50%'}} href="#">&#8226; Follow  </a> <p style={{fontSize:'13px'}}>{format(post.createdAt)}</p>     </div>
-            <div className="dots" style={{display:'flex', alignItems: 'center'}}>
-            <svg aria-label="More options" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6.5" cy="12" r="1.5"></circle><circle cx="17.5" cy="12" r="1.5"></circle></svg>
-            </div>
+            <div  className="dots" style={{display:'flex', alignItems: 'center'}}>
+            <svg id="1112" onClick={Moremenu} aria-label="More options" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6.5" cy="12" r="1.5"></circle><circle cx="17.5" cy="12" r="1.5"></circle></svg>
+
+           
+            </div>     
+             {/* <div id={post.userId} className="extension-menu">
+                 <li>Edit post</li>
+                 <li>Delete post </li>
+             </div> */}
         </div>
     </div>
     <div className="img">
@@ -116,3 +143,4 @@ const { user: currentUser } = useContext(AuthContext);
 
 }
 export default Card;
+

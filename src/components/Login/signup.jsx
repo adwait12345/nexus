@@ -8,7 +8,7 @@ export default function Signup() {
     const email = useRef();
     const password = useRef();
     const passwordAgain = useRef();
-    const history = useNavigate();
+   let history = useNavigate();
 
     const handleClick = async (e) => {
         e.preventDefault();
@@ -23,7 +23,7 @@ export default function Signup() {
 
                 try {
                     await axios.post("/auth/register", user);
-                    history(-1);
+                    history('/home');
                   } catch (err) {
                     console.log(err);
                   }

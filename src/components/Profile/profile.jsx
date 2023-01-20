@@ -66,13 +66,13 @@ console.log(desc)
                 </div>
             </div>
             <div className='main-profile create-post-profile'>
-                <div className='profile-sections left'>
+                {/* <div className='profile-sections left'>
                     Left Side
-                </div>
-                <div className='profile-sections right'>
+                </div> */}
+                {/* <div className='profile-sections right'>
                     <section ><CreatePost /></section>
         
-                </div>
+                </div> */}
             </div>
         </div>
     )
